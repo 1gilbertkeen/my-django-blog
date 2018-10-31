@@ -12,28 +12,12 @@
     <div>
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
+{% for post in posts %}
     <div>
-        <p>published: 31.10.2018, 13:40</p>
-        <h2><a href="">My Maiden Post</a></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-            mollit anim id est laborum</p>
+        <p>published: {{ post.published_date}}</p>
+        <h1><a href="">{{post.title}}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-        <p>published: 31.10.2018, 13:43</p>
-        <h2><a href="">My Second Post</a></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-            mollit anim id est laborum</p>
-    </div>
+{% endfor %}
 </body>
 </html>
